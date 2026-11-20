@@ -11,10 +11,7 @@ reachable but was not needed and has not been cross-checked.
 
 | Field | Nanos | Why |
 |---|---|---|
-| `levelRequirement` | all 33 | No item page has a level requirement row. The only requirements are nanoskills and profession (plus one flag on the Nanite Improved pair, see below). This is "no requirement on the item", not a missing value. |
-| `attackTimeSeconds`, `rechargeTimeSeconds` | Shutdown Skills | The 18.0 page has no attack/recharge rows. |
-| `nanolineStrainId` | Shutdown Skills and its two self-casts | auno shows the nanoline only as a number ("889", "890") with no name or link. |
-| `school`/`nanoline`, `stackingOrder` | Affected by Shutdown Skills (self-cast of Shutdown Skills) | Not on the page. |
+| `levelRequirement` | all 32 | No item page has a level requirement row. The only requirements are nanoskills and profession (plus one flag on the Nanite Improved pair, see below). This is "no requirement on the item", not a missing value. |
 | `selfBuffs[].nanoline` | all 16 Ransack and Plunder nanos | auno's name for this nanoline is wrong, see item 2 below. |
 
 `condition: null`, `connector: null` and `value: null` (on a "not running"
@@ -45,15 +42,12 @@ requirement) mean "none", not "unknown".
    what happens on a tie, whether the self-buff still lands when the target
    already has a better debuff). See the laddering write-up; those rules need
    confirming in game.
-6. **Shutdown Skills (280050).** A Trader-only skill drain that existed from
-   18.0 until 18.8.53 (the id is "Theft Humidity" on live). 3 second duration,
-   its own nanoline, 120 s lockout, and its self-buff adds no nanoskills, so it
-   plays no part in laddering. Its crystal link looks like a placeholder; I
-   can't confirm players could obtain it. Kept in the data, flagged
-   `family: "Shutdown Skills"`.
 
 ## Deliberately excluded
 
+- **Shutdown Skills** (280050, "Theft Humidity" on live): a standalone Trader
+  nano, not part of the skill-drain lines. It has its own nanoline, lasts 3
+  seconds, and its self-buff adds no nanoskills.
 - **Divest Skills (Spiritech Improved)** (302674): first appears in 18.8.53 and
   is usable only by NPC types 94-99. Not in the game at 18.4.
 - **Nanoskill Deprival** (276403): no profession requirement, NCU 999, school
