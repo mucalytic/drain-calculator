@@ -670,3 +670,12 @@ footer p {
     transition: none;
   }
 }
+
+/* The path and step numbers sit on top of the rungs; let clicks through to them. */
+.climb,
+.climb-shadow,
+.badge,
+.start-marker,
+.finish-marker {
+  pointer-events: none;
+}
