@@ -1,0 +1,5180 @@
+{
+  "meta": {
+    "source": "auno.org item database",
+    "sourceUrlTemplate": "https://auno.org/ao/db.php?id={id}",
+    "targetPatch": "18.4",
+    "aunoDatabasePatch": "18.8.62",
+    "generatedOn": "2026-11-20",
+    "note": "Each nano is the item version in force at the target patch (see dataPatch), not the live-server version.",
+    "notInGameAtTargetPatch": []
+  },
+  "drains": [
+    {
+      "id": 85872,
+      "name": "Deprive Skills (Weak)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85872",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 9 points, transferring 5 points back to the caster. If the target is an NPC, they will also lose 5 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Divest skills",
+      "nanolineStrainId": 135,
+      "stackingOrder": 2,
+      "ncu": 2,
+      "durationSeconds": 180,
+      "family": "Deprive Skills",
+      "ql": 4,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 36,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 36,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 10,
+      "attackTimeSeconds": 3.0,
+      "rechargeTimeSeconds": 6.0,
+      "range": "25 m",
+      "nanoResistPercent": 100,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85894,
+        "name": "Nano Crystal (Deprive Skills (Weak))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -9,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -5,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85844,
+          "name": "Deprive Skills (Weak) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85844",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 5 points.",
+          "school": "Psionic",
+          "nanoline": "Divest skills effect",
+          "nanolineStrainId": 137,
+          "stackingOrder": 2,
+          "ncu": 2,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 5,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85870,
+      "name": "Deprive Skills (Minor)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85870",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 21 points, transferring 13 points back to the caster. If the target is an NPC, they will also lose 11 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Divest skills",
+      "nanolineStrainId": 135,
+      "stackingOrder": 5,
+      "ncu": 5,
+      "durationSeconds": 180,
+      "family": "Deprive Skills",
+      "ql": 14,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 79,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 79,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 26,
+      "attackTimeSeconds": 3.0,
+      "rechargeTimeSeconds": 6.0,
+      "range": "25 m",
+      "nanoResistPercent": 100,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85895,
+        "name": "Nano Crystal (Deprive Skills (Minor))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -21,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -11,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85842,
+          "name": "Deprive Skills (Minor) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85842",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 13 points.",
+          "school": "Psionic",
+          "nanoline": "Divest skills effect",
+          "nanolineStrainId": 137,
+          "stackingOrder": 4,
+          "ncu": 4,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 13,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85868,
+      "name": "Deprive Skills (Average)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85868",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 33 points, transferring 21 points back to the caster. If the target is an NPC, they will also lose 17 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Divest skills",
+      "nanolineStrainId": 135,
+      "stackingOrder": 8,
+      "ncu": 8,
+      "durationSeconds": 180,
+      "family": "Deprive Skills",
+      "ql": 24,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 123,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 123,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 41,
+      "attackTimeSeconds": 3.0,
+      "rechargeTimeSeconds": 6.0,
+      "range": "25 m",
+      "nanoResistPercent": 100,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85896,
+        "name": "Nano Crystal (Deprive Skills (Average))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -33,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -17,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85840,
+          "name": "Deprive Skills (Average) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85840",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 21 points.",
+          "school": "Psionic",
+          "nanoline": "Divest skills effect",
+          "nanolineStrainId": 137,
+          "stackingOrder": 6,
+          "ncu": 6,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 21,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85866,
+      "name": "Deprive Skills (Lesser)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85866",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 45 points, transferring 29 points back to the caster. If the target is an NPC, they will also lose 23 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Divest skills",
+      "nanolineStrainId": 135,
+      "stackingOrder": 11,
+      "ncu": 11,
+      "durationSeconds": 180,
+      "family": "Deprive Skills",
+      "ql": 33,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 171,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 171,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 57,
+      "attackTimeSeconds": 3.01,
+      "rechargeTimeSeconds": 6.01,
+      "range": "25 m",
+      "nanoResistPercent": 100,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85898,
+        "name": "Nano Crystal (Deprive Skills (Lesser))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -45,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -23,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85838,
+          "name": "Deprive Skills (Lesser) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85838",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 29 points.",
+          "school": "Psionic",
+          "nanoline": "Divest skills effect",
+          "nanolineStrainId": 137,
+          "stackingOrder": 9,
+          "ncu": 9,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 29,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85864,
+      "name": "Deprive Skills",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85864",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 60 points, transferring 40 points back to the caster. If the target is an NPC, they will also lose 30 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Divest skills",
+      "nanolineStrainId": 135,
+      "stackingOrder": 14,
+      "ncu": 14,
+      "durationSeconds": 180,
+      "family": "Deprive Skills",
+      "ql": 43,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 216,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 216,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 80,
+      "attackTimeSeconds": 3.07,
+      "rechargeTimeSeconds": 6.07,
+      "range": "25 m",
+      "nanoResistPercent": 100,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85900,
+        "name": "Nano Crystal (Deprive Skills)"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -60,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -30,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85836,
+          "name": "Deprive Skills Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85836",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 40 points.",
+          "school": "Psionic",
+          "nanoline": "Divest skills effect",
+          "nanolineStrainId": 137,
+          "stackingOrder": 11,
+          "ncu": 11,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 40,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85862,
+      "name": "Deprive Skills (Major)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85862",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 76 points, transferring 55 points back to the caster. If the target is an NPC, they will also lose 38 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Divest skills",
+      "nanolineStrainId": 135,
+      "stackingOrder": 18,
+      "ncu": 18,
+      "durationSeconds": 180,
+      "family": "Deprive Skills",
+      "ql": 57,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 278,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 278,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 107,
+      "attackTimeSeconds": 3.11,
+      "rechargeTimeSeconds": 6.11,
+      "range": "25 m",
+      "nanoResistPercent": 100,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85897,
+        "name": "Nano Crystal (Deprive Skills (Major))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -76,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -38,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85834,
+          "name": "Deprive Skills (Major) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85834",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 55 points.",
+          "school": "Psionic",
+          "nanoline": "Divest skills effect",
+          "nanolineStrainId": 137,
+          "stackingOrder": 14,
+          "ncu": 14,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 55,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85860,
+      "name": "Deprive Skills (Advanced)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85860",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 95 points, transferring 72 points back to the caster. If the target is an NPC, they will also lose 48 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Divest skills",
+      "nanolineStrainId": 135,
+      "stackingOrder": 25,
+      "ncu": 25,
+      "durationSeconds": 180,
+      "family": "Deprive Skills",
+      "ql": 80,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 371,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 371,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 140,
+      "attackTimeSeconds": 3.65,
+      "rechargeTimeSeconds": 6.15,
+      "range": null,
+      "nanoResistPercent": 100,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85899,
+        "name": "Nano Crystal (Deprive Skills (Advanced))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -95,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -48,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85832,
+          "name": "Deprive Skills (Advanced) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85832",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 72 points.",
+          "school": "Psionic",
+          "nanoline": "Divest skills effect",
+          "nanolineStrainId": 137,
+          "stackingOrder": 19,
+          "ncu": 19,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 72,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85858,
+      "name": "Divest Skills (Weak)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85858",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 115 points, transferring 88 points back to the caster. If the target is an NPC, they will also lose 58 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Divest skills",
+      "nanolineStrainId": 135,
+      "stackingOrder": 29,
+      "ncu": 29,
+      "durationSeconds": 180,
+      "family": "Divest Skills",
+      "ql": 93,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 435,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 435,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 178,
+      "attackTimeSeconds": 3.67,
+      "rechargeTimeSeconds": 6.17,
+      "range": "25 m",
+      "nanoResistPercent": 100,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85887,
+        "name": "Nano Crystal (Divest Skills (Weak))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -115,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -58,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85830,
+          "name": "Divest Skills (Weak) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85830",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 88 points.",
+          "school": "Psionic",
+          "nanoline": "Divest skills effect",
+          "nanolineStrainId": 137,
+          "stackingOrder": 23,
+          "ncu": 23,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 88,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85856,
+      "name": "Divest Skills (Minor)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85856",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 136 points, transferring 106 points back to the caster. If the target is an NPC, they will also lose 68 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Divest skills",
+      "nanolineStrainId": 135,
+      "stackingOrder": 35,
+      "ncu": 35,
+      "durationSeconds": 180,
+      "family": "Divest Skills",
+      "ql": 113,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 526,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 526,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 222,
+      "attackTimeSeconds": 4.2,
+      "rechargeTimeSeconds": 6.2,
+      "range": "25 m",
+      "nanoResistPercent": 100,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85888,
+        "name": "Nano Crystal (Divest Skills (Minor))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -136,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -68,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85828,
+          "name": "Divest Skills (Minor) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85828",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 106 points.",
+          "school": "Psionic",
+          "nanoline": "Divest skills effect",
+          "nanolineStrainId": 137,
+          "stackingOrder": 27,
+          "ncu": 27,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 106,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85854,
+      "name": "Divest Skills (Average)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85854",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 158 points, transferring 124 points back to the caster. If the target is an NPC, they will also lose 79 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Divest skills",
+      "nanolineStrainId": 135,
+      "stackingOrder": 41,
+      "ncu": 41,
+      "durationSeconds": 180,
+      "family": "Divest Skills",
+      "ql": 132,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 621,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 621,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 274,
+      "attackTimeSeconds": 4.28,
+      "rechargeTimeSeconds": 6.28,
+      "range": "25 m",
+      "nanoResistPercent": 100,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85889,
+        "name": "Nano Crystal (Divest Skills (Average))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -158,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -79,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85826,
+          "name": "Divest Skills (Average) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85826",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "14.4.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 124 points.",
+          "school": "Psionic",
+          "nanoline": "Divest skills effect",
+          "nanolineStrainId": 137,
+          "stackingOrder": 32,
+          "ncu": 32,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 124,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85852,
+      "name": "Divest Skills (Lesser)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85852",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "14.8",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 173 points, transferring 137 points back to the caster. If the target is an NPC, they will also lose 87 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Divest skills",
+      "nanolineStrainId": 135,
+      "stackingOrder": 46,
+      "ncu": 46,
+      "durationSeconds": 180,
+      "family": "Divest Skills",
+      "ql": 149,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 694,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 694,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 335,
+      "attackTimeSeconds": 4.36,
+      "rechargeTimeSeconds": 6.36,
+      "range": "25 m",
+      "nanoResistPercent": 100,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85891,
+        "name": "Nano Crystal (Divest Skills (Lesser))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -173,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -87,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85824,
+          "name": "Divest Skills (Lesser) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85824",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 137 points.",
+          "school": "Psionic",
+          "nanoline": "Divest skills effect",
+          "nanolineStrainId": 137,
+          "stackingOrder": 35,
+          "ncu": 35,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 137,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85850,
+      "name": "Divest Skills",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85850",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 182 points, transferring 146 points back to the caster. If the target is an NPC, they will also lose 91 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Divest skills",
+      "nanolineStrainId": 135,
+      "stackingOrder": 48,
+      "ncu": 48,
+      "durationSeconds": 180,
+      "family": "Divest Skills",
+      "ql": 156,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 728,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 728,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 350,
+      "attackTimeSeconds": 4.41,
+      "rechargeTimeSeconds": 6.41,
+      "range": "25 m",
+      "nanoResistPercent": 100,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85892,
+        "name": "Nano Crystal (Divest Skills)"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -182,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -91,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85822,
+          "name": "Divest Skills Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85822",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 146 points.",
+          "school": "Psionic",
+          "nanoline": "Divest skills effect",
+          "nanolineStrainId": 137,
+          "stackingOrder": 36,
+          "ncu": 36,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 146,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85848,
+      "name": "Divest Skills (Major)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85848",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 192 points, transferring 157 points back to the caster. If the target is an NPC, they will also lose 96 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Divest skills",
+      "nanolineStrainId": 135,
+      "stackingOrder": 51,
+      "ncu": 51,
+      "durationSeconds": 180,
+      "family": "Divest Skills",
+      "ql": 165,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 769,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 769,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 387,
+      "attackTimeSeconds": 4.46,
+      "rechargeTimeSeconds": 6.46,
+      "range": "25 m",
+      "nanoResistPercent": 100,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85890,
+        "name": "Nano Crystal (Divest Skills (Major))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -192,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -96,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85820,
+          "name": "Divest Skills (Major) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85820",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 157 points.",
+          "school": "Psionic",
+          "nanoline": "Divest skills effect",
+          "nanolineStrainId": 137,
+          "stackingOrder": 38,
+          "ncu": 38,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 157,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85846,
+      "name": "Divest Skills (Advanced)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85846",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 204 points, transferring 170 points back to the caster. If the target is an NPC, they will also lose 102 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Divest skills",
+      "nanolineStrainId": 135,
+      "stackingOrder": 55,
+      "ncu": 55,
+      "durationSeconds": 180,
+      "family": "Divest Skills",
+      "ql": 179,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 827,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 827,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 426,
+      "attackTimeSeconds": 4.49,
+      "rechargeTimeSeconds": 6.49,
+      "range": "25 m",
+      "nanoResistPercent": 100,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85893,
+        "name": "Nano Crystal (Divest Skills (Advanced))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -204,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -102,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85818,
+          "name": "Divest Skills (Advanced) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85818",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 170 points.",
+          "school": "Psionic",
+          "nanoline": "Divest skills effect",
+          "nanolineStrainId": 137,
+          "stackingOrder": 40,
+          "ncu": 40,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 170,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 267114,
+      "name": "Divest Skills (Nanite Enhanced)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=267114",
+      "dataPatch": "17.2",
+      "patchHistory": [
+        "17.2",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 250 points, transferring 210 points back to the caster. The target will also lose 150 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Divest skills",
+      "nanolineStrainId": 135,
+      "stackingOrder": 57,
+      "ncu": 55,
+      "durationSeconds": 210,
+      "family": "Divest Skills",
+      "ql": 200,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 1001,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 1001,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 500,
+      "attackTimeSeconds": 3.0,
+      "rechargeTimeSeconds": 4.0,
+      "range": "25 m",
+      "nanoResistPercent": 90,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 267115,
+        "name": "Nano Crystal (Trad: Divest Skills (Nanite Enhanced))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -250,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -150,
+          "condition": null,
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 267113,
+          "name": "Divest Skills (Nanite Enhanced) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=267113",
+          "dataPatch": "17.2",
+          "patchHistory": [
+            "17.2",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 210 points.",
+          "school": "Psionic",
+          "nanoline": "Divest skills effect",
+          "nanolineStrainId": 137,
+          "stackingOrder": 40,
+          "ncu": 40,
+          "durationSeconds": 210,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 210,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 275030,
+      "name": "Divest Skills (Nanite Improved)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=275030",
+      "dataPatch": "17.9",
+      "patchHistory": [
+        "17.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 325 points, transferring 275 points back to the caster. The target will also lose 150 points of offensive ability and decreased chance of a critical hit.",
+      "school": "Psionic",
+      "nanoline": "Divest skills",
+      "nanolineStrainId": 135,
+      "stackingOrder": 71,
+      "ncu": 61,
+      "durationSeconds": 210,
+      "family": "Divest Skills",
+      "ql": 215,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 1801,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 1801,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Cyberdeck",
+          "operator": "&",
+          "value": 6,
+          "connector": null
+        }
+      ],
+      "nanoCost": 600,
+      "attackTimeSeconds": 3.0,
+      "rechargeTimeSeconds": 4.0,
+      "range": "25 m",
+      "nanoResistPercent": 90,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 275033,
+        "name": "Nano Crystal (Divest Skills (Nanite Improved))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -325,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -150,
+          "condition": null,
+          "stats": [
+            "Offense modifier"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -15,
+          "condition": null,
+          "stats": [
+            "Critical chance"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 275032,
+          "name": "Divest Skills (Nanite Improved) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=275032",
+          "dataPatch": "17.9",
+          "patchHistory": [
+            "17.9",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 275 points.",
+          "school": "Psionic",
+          "nanoline": "Divest skills effect",
+          "nanolineStrainId": 137,
+          "stackingOrder": 40,
+          "ncu": 40,
+          "durationSeconds": 210,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 275,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            },
+            {
+              "action": "Modify",
+              "amount": 12,
+              "condition": null,
+              "stats": [
+                "Critical chance"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85871,
+      "name": "Ransack Skills (Weak)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85871",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 15 points, transferring 9 points back to the caster. If the target is an NPC, they will also lose 8 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Plunder skills",
+      "nanolineStrainId": 136,
+      "stackingOrder": 4,
+      "ncu": 4,
+      "durationSeconds": 180,
+      "family": "Ransack Skills",
+      "ql": 10,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 58,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 58,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 16,
+      "attackTimeSeconds": 3.0,
+      "rechargeTimeSeconds": 6.0,
+      "range": "25 m",
+      "nanoResistPercent": 190,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85873,
+        "name": "Nano Crystal (Ransack Skills (Weak))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -15,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -8,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85843,
+          "name": "Ransack Skills (Weak) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85843",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 9 points.",
+          "school": "Psionic",
+          "nanoline": "Trader AC leech line A",
+          "nanolineStrainId": 138,
+          "stackingOrder": 3,
+          "ncu": 3,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 9,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85869,
+      "name": "Ransack Skills (Minor)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85869",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 26 points, transferring 16 points back to the caster. If the target is an NPC, they will also lose 13 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Plunder skills",
+      "nanolineStrainId": 136,
+      "stackingOrder": 7,
+      "ncu": 7,
+      "durationSeconds": 180,
+      "family": "Ransack Skills",
+      "ql": 20,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 99,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 99,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 28,
+      "attackTimeSeconds": 3.0,
+      "rechargeTimeSeconds": 6.0,
+      "range": "25 m",
+      "nanoResistPercent": 190,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85874,
+        "name": "Nano Crystal (Ransack Skills (Minor))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -26,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -13,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85841,
+          "name": "Ransack Skills (Minor) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85841",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 16 points.",
+          "school": "Psionic",
+          "nanoline": "Trader AC leech line A",
+          "nanolineStrainId": 138,
+          "stackingOrder": 5,
+          "ncu": 5,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 16,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85867,
+      "name": "Ransack Skills (Average)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85867",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 39 points, transferring 25 points back to the caster. If the target is an NPC, they will also lose 20 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Plunder skills",
+      "nanolineStrainId": 136,
+      "stackingOrder": 10,
+      "ncu": 10,
+      "durationSeconds": 180,
+      "family": "Ransack Skills",
+      "ql": 30,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 148,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 148,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 43,
+      "attackTimeSeconds": 3.0,
+      "rechargeTimeSeconds": 6.0,
+      "range": "25 m",
+      "nanoResistPercent": 190,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85875,
+        "name": "Nano Crystal (Ransack Skills (Average))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -39,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -20,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85839,
+          "name": "Ransack Skills (Average) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85839",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 25 points.",
+          "school": "Psionic",
+          "nanoline": "Trader AC leech line A",
+          "nanolineStrainId": 138,
+          "stackingOrder": 8,
+          "ncu": 8,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 25,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85865,
+      "name": "Ransack Skills (Lesser)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85865",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 52 points, transferring 34 points back to the caster. If the target is an NPC, they will also lose 26 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Plunder skills",
+      "nanolineStrainId": 136,
+      "stackingOrder": 13,
+      "ncu": 13,
+      "durationSeconds": 180,
+      "family": "Ransack Skills",
+      "ql": 40,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 191,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 191,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 60,
+      "attackTimeSeconds": 3.04,
+      "rechargeTimeSeconds": 6.04,
+      "range": "25 m",
+      "nanoResistPercent": 190,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85877,
+        "name": "Nano Crystal (Ransack Skills (Lesser))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -52,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -26,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85837,
+          "name": "Ransack Skills (Lesser) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85837",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 34 points.",
+          "school": "Psionic",
+          "nanoline": "Trader AC leech line A",
+          "nanolineStrainId": 138,
+          "stackingOrder": 10,
+          "ncu": 10,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 34,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85863,
+      "name": "Ransack Skills",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85863",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 69 points, transferring 47 points back to the caster. If the target is an NPC, they will also lose 35 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Plunder skills",
+      "nanolineStrainId": 136,
+      "stackingOrder": 16,
+      "ncu": 16,
+      "durationSeconds": 180,
+      "family": "Ransack Skills",
+      "ql": 50,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 241,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 241,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 85,
+      "attackTimeSeconds": 3.1,
+      "rechargeTimeSeconds": 6.1,
+      "range": "25 m",
+      "nanoResistPercent": 190,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85880,
+        "name": "Nano Crystal (Ransack Skills)"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -69,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -35,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85835,
+          "name": "Ransack Skills Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85835",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 47 points.",
+          "school": "Psionic",
+          "nanoline": "Trader AC leech line A",
+          "nanolineStrainId": 138,
+          "stackingOrder": 13,
+          "ncu": 13,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 47,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85861,
+      "name": "Ransack Skills (Major)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85861",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 86 points, transferring 63 points back to the caster. If the target is an NPC, they will also lose 43 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Plunder skills",
+      "nanolineStrainId": 136,
+      "stackingOrder": 22,
+      "ncu": 22,
+      "durationSeconds": 180,
+      "family": "Ransack Skills",
+      "ql": 70,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 324,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 324,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 112,
+      "attackTimeSeconds": 3.63,
+      "rechargeTimeSeconds": 6.13,
+      "range": "25 m",
+      "nanoResistPercent": 190,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85876,
+        "name": "Nano Crystal (Ransack Skills (Major))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -86,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -43,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85833,
+          "name": "Ransack Skills (Major) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85833",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 63 points.",
+          "school": "Psionic",
+          "nanoline": "Trader AC leech line A",
+          "nanolineStrainId": 138,
+          "stackingOrder": 17,
+          "ncu": 17,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 63,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85859,
+      "name": "Ransack Skills (Advanced)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85859",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 105 points, transferring 79 points back to the caster. If the target is an NPC, they will also lose 53 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Plunder skills",
+      "nanolineStrainId": 136,
+      "stackingOrder": 27,
+      "ncu": 27,
+      "durationSeconds": 180,
+      "family": "Ransack Skills",
+      "ql": 86,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 402,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 402,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 145,
+      "attackTimeSeconds": 3.66,
+      "rechargeTimeSeconds": 6.16,
+      "range": "25 m",
+      "nanoResistPercent": 190,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85878,
+        "name": "Nano Crystal (Ransack Skills (Advanced))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -105,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -53,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85831,
+          "name": "Ransack Skills (Advanced) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85831",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 79 points.",
+          "school": "Psionic",
+          "nanoline": "Trader AC leech line A",
+          "nanolineStrainId": 138,
+          "stackingOrder": 20,
+          "ncu": 20,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 79,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85857,
+      "name": "Plunder Skills (Weak)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85857",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 125 points, transferring 97 points back to the caster. If the target is an NPC, they will also lose 63 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Plunder skills",
+      "nanolineStrainId": 136,
+      "stackingOrder": 32,
+      "ncu": 32,
+      "durationSeconds": 180,
+      "family": "Plunder Skills",
+      "ql": 103,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 474,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 474,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 183,
+      "attackTimeSeconds": 3.69,
+      "rechargeTimeSeconds": 6.19,
+      "range": "25 m",
+      "nanoResistPercent": 190,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85879,
+        "name": "Nano Crystal (Plunder Skills (Weak))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -125,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -63,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85829,
+          "name": "Plunder Skills (Weak) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85829",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 97 points.",
+          "school": "Psionic",
+          "nanoline": "Trader AC leech line A",
+          "nanolineStrainId": 138,
+          "stackingOrder": 25,
+          "ncu": 25,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 97,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85855,
+      "name": "Plunder Skills (Minor)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85855",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 147 points, transferring 115 points back to the caster. If the target is an NPC, they will also lose 74 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Plunder skills",
+      "nanolineStrainId": 136,
+      "stackingOrder": 38,
+      "ncu": 38,
+      "durationSeconds": 180,
+      "family": "Plunder Skills",
+      "ql": 123,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 572,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 572,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 229,
+      "attackTimeSeconds": 4.24,
+      "rechargeTimeSeconds": 6.24,
+      "range": "25 m",
+      "nanoResistPercent": 190,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85881,
+        "name": "Nano Crystal (Plunder Skills (Minor))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -147,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -74,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85827,
+          "name": "Plunder Skills (Minor) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85827",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 115 points.",
+          "school": "Psionic",
+          "nanoline": "Trader AC leech line A",
+          "nanolineStrainId": 138,
+          "stackingOrder": 29,
+          "ncu": 29,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 115,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85853,
+      "name": "Plunder Skills (Average)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85853",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 167 points, transferring 132 points back to the caster. If the target is an NPC, they will also lose 84 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Plunder skills",
+      "nanolineStrainId": 136,
+      "stackingOrder": 45,
+      "ncu": 45,
+      "durationSeconds": 180,
+      "family": "Plunder Skills",
+      "ql": 146,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 669,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 669,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 278,
+      "attackTimeSeconds": 4.32,
+      "rechargeTimeSeconds": 6.32,
+      "range": "25 m",
+      "nanoResistPercent": 190,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85882,
+        "name": "Nano Crystal (Plunder Skills (Average))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -167,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -84,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85825,
+          "name": "Plunder Skills (Average) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85825",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 132 points.",
+          "school": "Psionic",
+          "nanoline": "Trader AC leech line A",
+          "nanolineStrainId": 138,
+          "stackingOrder": 34,
+          "ncu": 34,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 132,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85851,
+      "name": "Plunder Skills (Lesser)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85851",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 178 points, transferring 143 points back to the caster. If the target is an NPC, they will also lose 89 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Plunder skills",
+      "nanolineStrainId": 136,
+      "stackingOrder": 47,
+      "ncu": 47,
+      "durationSeconds": 180,
+      "family": "Plunder Skills",
+      "ql": 152,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 711,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 711,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 314,
+      "attackTimeSeconds": 4.38,
+      "rechargeTimeSeconds": 6.38,
+      "range": "25 m",
+      "nanoResistPercent": 190,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85884,
+        "name": "Nano Crystal (Plunder Skills (Lesser))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -178,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -89,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85823,
+          "name": "Plunder Skills (Lesser) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85823",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 143 points.",
+          "school": "Psionic",
+          "nanoline": "Trader AC leech line A",
+          "nanolineStrainId": 138,
+          "stackingOrder": 35,
+          "ncu": 35,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 143,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85849,
+      "name": "Plunder Skills",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85849",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 187 points, transferring 151 points back to the caster. If the target is an NPC, they will also lose 94 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Plunder skills",
+      "nanolineStrainId": 136,
+      "stackingOrder": 50,
+      "ncu": 50,
+      "durationSeconds": 180,
+      "family": "Plunder Skills",
+      "ql": 162,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 745,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 745,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 349,
+      "attackTimeSeconds": 4.44,
+      "rechargeTimeSeconds": 6.44,
+      "range": "25 m",
+      "nanoResistPercent": 190,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85885,
+        "name": "Nano Crystal (Plunder Skills)"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -187,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -94,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85821,
+          "name": "Plunder Skills Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85821",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 151 points.",
+          "school": "Psionic",
+          "nanoline": "Trader AC leech line A",
+          "nanolineStrainId": 138,
+          "stackingOrder": 37,
+          "ncu": 37,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 151,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85847,
+      "name": "Plunder Skills (Major)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85847",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 198 points, transferring 163 points back to the caster. If the target is an NPC, they will also lose 99 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Plunder skills",
+      "nanolineStrainId": 136,
+      "stackingOrder": 53,
+      "ncu": 53,
+      "durationSeconds": 180,
+      "family": "Plunder Skills",
+      "ql": 172,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 795,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 795,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 386,
+      "attackTimeSeconds": 4.48,
+      "rechargeTimeSeconds": 6.48,
+      "range": "25 m",
+      "nanoResistPercent": 190,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85883,
+        "name": "Nano Crystal (Plunder Skills (Major))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -198,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -99,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85819,
+          "name": "Plunder Skills (Major) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85819",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 163 points.",
+          "school": "Psionic",
+          "nanoline": "Trader AC leech line A",
+          "nanolineStrainId": 138,
+          "stackingOrder": 39,
+          "ncu": 39,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 163,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 85845,
+      "name": "Plunder Skills (Advanced)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=85845",
+      "dataPatch": "15.9",
+      "patchHistory": [
+        "11.0",
+        "12.5",
+        "13.2",
+        "15.0.1",
+        "15.5.5",
+        "15.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 211 points, transferring 178 points back to the caster. If the target is an NPC, they will also lose 106 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Plunder skills",
+      "nanolineStrainId": 136,
+      "stackingOrder": 57,
+      "ncu": 57,
+      "durationSeconds": 180,
+      "family": "Plunder Skills",
+      "ql": 185,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 853,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 853,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 429,
+      "attackTimeSeconds": 4.52,
+      "rechargeTimeSeconds": 6.52,
+      "range": "25 m",
+      "nanoResistPercent": 190,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 85886,
+        "name": "Nano Crystal (Plunder Skills (Advanced))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -211,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -106,
+          "condition": "NPC type >= 1",
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 85817,
+          "name": "Plunder Skills (Advanced) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=85817",
+          "dataPatch": "15.0.1",
+          "patchHistory": [
+            "11.0",
+            "13.2",
+            "15.0.1",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 178 points.",
+          "school": "Psionic",
+          "nanoline": "Trader AC leech line A",
+          "nanolineStrainId": 138,
+          "stackingOrder": 41,
+          "ncu": 41,
+          "durationSeconds": 180,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 178,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 267110,
+      "name": "Plunder Skills (Nanite Enhanced)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=267110",
+      "dataPatch": "17.2",
+      "patchHistory": [
+        "17.2",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 250 points, transferring 210 points back to the caster. The target will also lose 150 points of offensive ability.",
+      "school": "Psionic",
+      "nanoline": "Plunder skills",
+      "nanolineStrainId": 136,
+      "stackingOrder": 58,
+      "ncu": 65,
+      "durationSeconds": 210,
+      "family": "Plunder Skills",
+      "ql": 200,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 1001,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 1001,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Visual profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": null
+        }
+      ],
+      "nanoCost": 500,
+      "attackTimeSeconds": 3.0,
+      "rechargeTimeSeconds": 5.0,
+      "range": "30 m",
+      "nanoResistPercent": 150,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 267111,
+        "name": "Nano Crystal (Trad: Plunder Skills (Nanite Enhanced))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -250,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -150,
+          "condition": null,
+          "stats": [
+            "Offense modifier"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 267109,
+          "name": "Plunder Skills (Nanite Enhanced) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=267109",
+          "dataPatch": "17.2",
+          "patchHistory": [
+            "17.2",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 210 points.",
+          "school": "Psionic",
+          "nanoline": "Trader AC leech line A",
+          "nanolineStrainId": 138,
+          "stackingOrder": 42,
+          "ncu": 41,
+          "durationSeconds": 210,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 210,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 275029,
+      "name": "Plunder Skills (Nanite Improved)",
+      "aunoUrl": "https://auno.org/ao/db.php?id=275029",
+      "dataPatch": "17.9",
+      "patchHistory": [
+        "17.9",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by 325 points, transferring 275 points back to the caster. The target will also lose 150 points of offensive ability and decreased chance of a critical hit.",
+      "school": "Psionic",
+      "nanoline": "Plunder skills",
+      "nanolineStrainId": 136,
+      "stackingOrder": 71,
+      "ncu": 71,
+      "durationSeconds": 210,
+      "family": "Plunder Skills",
+      "ql": 215,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 1801,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Time and space",
+          "operator": ">=",
+          "value": 1801,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Cyberdeck",
+          "operator": "&",
+          "value": 6,
+          "connector": null
+        }
+      ],
+      "nanoCost": 600,
+      "attackTimeSeconds": 3.0,
+      "rechargeTimeSeconds": 5.0,
+      "range": "30 m",
+      "nanoResistPercent": 150,
+      "attackSkillsPercent": {
+        "Psychological modifications": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 275033,
+        "name": "Nano Crystal (Divest Skills (Nanite Improved))"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -325,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -150,
+          "condition": null,
+          "stats": [
+            "Offense modifier"
+          ]
+        },
+        {
+          "action": "Modify",
+          "amount": -15,
+          "condition": null,
+          "stats": [
+            "Critical chance"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 275031,
+          "name": "Plunder Skills (Nanite Improved) Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=275031",
+          "dataPatch": "17.9",
+          "patchHistory": [
+            "17.9",
+            "18.8.53"
+          ],
+          "description": "Increases all attacking and nano skills by 275 points.",
+          "school": "Psionic",
+          "nanoline": "Trader AC leech line A",
+          "nanolineStrainId": 138,
+          "stackingOrder": 42,
+          "ncu": 41,
+          "durationSeconds": 210,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 275,
+              "condition": null,
+              "stats": [
+                "Martial arts",
+                "1h Blunt",
+                "1h Edged",
+                "Melee energy",
+                "2h Edged",
+                "Piercing",
+                "2h Blunt",
+                "Sharp objects",
+                "Grenade",
+                "Heavy weapons",
+                "Bow",
+                "Pistol",
+                "Rifle",
+                "Smg",
+                "Shotgun",
+                "Assault rifle",
+                "Sensory improvement",
+                "Matter metamorphosis",
+                "Biological metamorphosis",
+                "Psychological modifications",
+                "Matter creation",
+                "Time and space",
+                "Ranged energy"
+              ]
+            },
+            {
+              "action": "Modify",
+              "amount": 12,
+              "condition": null,
+              "stats": [
+                "Critical chance"
+              ]
+            }
+          ],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    },
+    {
+      "id": 280050,
+      "name": "Shutdown Skills",
+      "aunoUrl": "https://auno.org/ao/db.php?id=280050",
+      "dataPatch": "18.0",
+      "patchHistory": [
+        "18.0",
+        "18.8.53"
+      ],
+      "description": "Lowers all attacking and nano skills of the target by up to 2200 points, transferring them back to the caster as offensive ability. The target will experience a decreased chance of a critical hit.",
+      "school": "Psionic",
+      "nanoline": "889",
+      "nanolineStrainId": null,
+      "stackingOrder": 200,
+      "ncu": 5,
+      "durationSeconds": 3,
+      "family": "Shutdown Skills",
+      "ql": 20,
+      "levelRequirement": null,
+      "requirements": [
+        {
+          "target": "User",
+          "stat": "Psychological modifications",
+          "operator": ">=",
+          "value": 120,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Sensory improvement",
+          "operator": ">=",
+          "value": 120,
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Profession",
+          "operator": "==",
+          "value": "Trader",
+          "connector": "and"
+        },
+        {
+          "target": "User",
+          "stat": "Affected by Shutdown Skills",
+          "operator": "not running",
+          "value": null,
+          "connector": null
+        }
+      ],
+      "nanoCost": 1000,
+      "attackTimeSeconds": null,
+      "rechargeTimeSeconds": null,
+      "range": "25 m",
+      "nanoResistPercent": 50,
+      "attackSkillsPercent": {
+        "Sensory improvement": 50,
+        "Time and space": 50
+      },
+      "crystal": {
+        "id": 280053,
+        "name": "Nano Crystal (Trad: Theft Humidity)"
+      },
+      "targetModifiers": [
+        {
+          "action": "Modify",
+          "amount": -100,
+          "condition": null,
+          "stats": [
+            "Critical chance"
+          ]
+        },
+        {
+          "action": "Advantage",
+          "amount": -2000,
+          "condition": null,
+          "stats": [
+            "Martial arts",
+            "1h Blunt",
+            "1h Edged",
+            "Melee energy",
+            "2h Edged",
+            "Piercing",
+            "2h Blunt",
+            "Sharp objects",
+            "Grenade",
+            "Heavy weapons",
+            "Bow",
+            "Pistol",
+            "Rifle",
+            "Smg",
+            "Shotgun",
+            "Assault rifle",
+            "Sensory improvement",
+            "Matter metamorphosis",
+            "Biological metamorphosis",
+            "Psychological modifications",
+            "Matter creation",
+            "Time and space",
+            "Ranged energy"
+          ]
+        }
+      ],
+      "selfBuffs": [
+        {
+          "id": 280051,
+          "name": "Shutdown Skills Transfer",
+          "aunoUrl": "https://auno.org/ao/db.php?id=280051",
+          "dataPatch": "18.0.1",
+          "patchHistory": [
+            "18.0",
+            "18.0.1",
+            "18.8.53"
+          ],
+          "description": "Increased chance of a critical hit by 100%.",
+          "school": "Psionic",
+          "nanoline": "890",
+          "nanolineStrainId": null,
+          "stackingOrder": 200,
+          "ncu": 5,
+          "durationSeconds": 3,
+          "modifiers": [
+            {
+              "action": "Modify",
+              "amount": 100,
+              "condition": null,
+              "stats": [
+                "Critical chance"
+              ]
+            }
+          ],
+          "requirements": [],
+          "nameOnLivePatch": "Theft Humidity"
+        },
+        {
+          "id": 280052,
+          "name": "Affected by Shutdown Skills",
+          "aunoUrl": "https://auno.org/ao/db.php?id=280052",
+          "dataPatch": "18.0.4",
+          "patchHistory": [
+            "18.0",
+            "18.0.4"
+          ],
+          "description": "Your nanobots have recently been used very hard, give them a chance to rest.",
+          "school": "Psionic",
+          "nanoline": null,
+          "nanolineStrainId": null,
+          "stackingOrder": null,
+          "ncu": 999,
+          "durationSeconds": 120,
+          "modifiers": [],
+          "requirements": []
+        }
+      ],
+      "otherCasts": []
+    }
+  ]
+}
