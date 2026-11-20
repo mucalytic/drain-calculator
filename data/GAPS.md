@@ -4,9 +4,9 @@
 pages. Nothing in it is estimated. This file lists every value that is null, and
 everything I could not confirm for Project Rubi-Ka (patch 18.4).
 
-Source used: auno.org only (it answered plain HTTP requests). aogalaxy.com was
-consulted only for the `Cyberdeck` requirement (item 3 below); it shows live
-data with no patch history, so it was not used for values.
+Source used for values: auno.org only (it answered plain HTTP requests).
+aogalaxy.com was consulted only for the `Cyberdeck` requirement (item 3 below);
+it shows live data with no patch history, so no values were taken from it.
 
 ## Null fields
 
