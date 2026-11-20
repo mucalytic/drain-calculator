@@ -601,7 +601,6 @@ tbody th {
   font-size: 0.75rem;
   font-weight: 400;
   color: var(--bad);
-  white-space: nowrap;
 }
 
 /* Footer */

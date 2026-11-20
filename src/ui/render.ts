@@ -1,6 +1,6 @@
 import { DRAIN_LINES, type Drain, type DrainCatalog } from '../domain/drain';
 import type { LadderPlan, LadderStep, OutOfReachDrain } from '../domain/ladder';
-import { drainLink, duration, escapeHtml, LINE_TITLE, shortName } from './format';
+import { describeRequirement, drainLink, duration, escapeHtml, LINE_TITLE, shortName } from './format';
 import type { LadderView } from './view';
 
 /** HTML for the sections around the diagram. All functions are pure: view in, markup out. */
@@ -102,7 +102,7 @@ function renderUnreachableSelection(entry: OutOfReachDrain, view: LadderView): s
   const { drain } = entry;
   const blocked =
     entry.reason === 'unevaluated-requirement'
-      ? `<p>It also has a requirement this calculator can't check: <code>${escapeHtml(drain.unevaluatedRequirement ?? '')}</code>. Tick the box above if you meet it.</p>`
+      ? `<p>It also needs ${describeRequirement(drain.unevaluatedRequirement ?? '')}. Tick the box above if you have that.</p>`
       : '';
   const skill =
     entry.extraSkillNeeded > 0
@@ -145,7 +145,7 @@ function renderOutOfReachRow(entry: OutOfReachDrain, view: LadderView): string {
       : '<span class="muted">skill is enough</span>';
   const note =
     entry.reason === 'unevaluated-requirement'
-      ? `<span class="chip">also needs <code>${escapeHtml(drain.unevaluatedRequirement ?? '')}</code></span>`
+      ? `<span class="chip">also needs ${describeRequirement(drain.unevaluatedRequirement ?? '')}</span>`
       : '';
   return `
     <tr>

@@ -41,9 +41,11 @@ Assumed game rules (not stated in the item data):
 The "best ladder" is the fewest casts that reach the top drain of each line;
 between equally short ladders, the one costing less nano.
 
-The two Nanite Improved drains carry an extra requirement (`Cyberdeck & 6`)
-that the calculator cannot evaluate. They are left out unless the tick box on
-the page is set. See `data/GAPS.md`.
+The two Nanite Improved drains also require the Trader Nanodeck to be worn
+(printed in the data as `Cyberdeck & 6`). The Nanodeck needs level 215 and
+comes from the Dust Brigade questline, which is not on Project Rubi-Ka yet, so
+those two drains are left out unless the tick box on the page is set. See
+`data/GAPS.md`.
 
 ## Project layout
 

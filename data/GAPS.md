@@ -12,7 +12,7 @@ it shows live data with no patch history, so no values were taken from it.
 
 | Field | Nanos | Why |
 |---|---|---|
-| `levelRequirement` | all 32 | No item page has a level requirement row. The only requirements are nanoskills and profession (plus one flag on the Nanite Improved pair, see below). This is "no requirement on the item", not a missing value. |
+| `levelRequirement` | all 32 | No item page has a level requirement row. The only requirements are nanoskills and profession (plus a worn-item flag on the Nanite Improved pair, see below; the item that sets it needs level 215). This is "no requirement on the item", not a missing value. |
 | `selfBuffs[].nanoline` | all 16 Ransack and Plunder nanos | auno's name for this nanoline is wrong, see item 2 below. |
 
 `condition: null`, `connector: null` and `value: null` (on a "not running"
@@ -33,15 +33,21 @@ requirement) mean "none", not "unknown".
    grouping is carried by `nanolineStrainId: 138`, and auno's text is kept in
    `nanolineLabelOnAuno`. The true in-game name of strain 138 is not on the
    page. The 16 Deprive/Divest transfers are strain 137, "Divest skills effect".
-3. **`Cyberdeck & 6`** on both Nanite Improved nanos (17.9). Recorded exactly as
-   auno prints it. aogalaxy (live data, not 18.4) prints the same requirement
-   as `Cyberdeck & 64`, so auno's 6 is most likely a bit number (bit 6 = 64),
-   but neither page says so. "Cyberdeck" is the stat name both databases use;
-   per the project owner a Trader has no access to a cyberdeck, so the name
-   cannot be read literally. What sets this flag on a character, and whether a
-   Trader on PRK can meet it, is not in the item data.
-4. **Crystal for Plunder Skills (Nanite Improved)** is shown on the 17.9 page as
-   "Nano Crystal (Divest Skills (Nanite Improved))" (id 275033). Recorded as shown.
+3. **`Cyberdeck & 6`** on both Nanite Improved nanos (17.9): resolved. It
+   means "wearing the Trader Nanodeck". auno's page for Trader Nanodeck
+   (id 270769, patch 17.6; equip requires Trader and level 215) has the equip
+   effect "Set flag Cyberdeck 0x00000006", and so do the Activated and Stellar
+   Trader Nanodecks (18.0.2). aogalaxy prints the same test as `Cyberdeck & 64`
+   and an archived aoitems page as stat 355 worn-item flag "NanoDeck 64":
+   bit 6 = 64. "Cyberdeck" is the databases' name for that worn-deck stat.
+   Per guides (not item data), the Nanodeck and the Nanite Improved crystal are
+   rewards from the Dust Brigade questline. Per the project owner, that content
+   is not on Project Rubi-Ka yet, so the two Nanite Improved drains cannot be
+   obtained there. The calculator leaves them out unless its tick box is set.
+4. **Crystal for the Nanite Improved pair.** At 17.9 there is one crystal,
+   "Nano Crystal (Plunder/Divest Skills (Nanite Improved))" (id 275033), which
+   uploads both drains; auno links it under its live name, "Nano Crystal
+   (Divest Skills (Nanite Improved))". Not an error in the data.
 5. **Stacking behaviour.** The pages give a stacking order number per nano and
    a nanoline. They do not state the rule the game applies (which order wins,
    what happens on a tie, whether the self-buff still lands when the target

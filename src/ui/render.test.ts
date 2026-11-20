@@ -3,7 +3,7 @@ import document from '../../data/drains.json';
 import { toDrainCatalog } from '../data/catalog';
 import type { Trader } from '../domain/ladder';
 import { parseSkillPoints } from '../domain/skill';
-import { renderSteps, renderSummary } from './render';
+import { renderOutOfReach, renderSteps, renderSummary } from './render';
 import { buildLadderView } from './view';
 
 const catalog = toDrainCatalog(document);
@@ -64,5 +64,15 @@ describe('renderSummary', () => {
     const html = renderSummary(buildLadderView(catalog, trader(35), null));
 
     expect(html).toContain('Deprive Skills (Weak), needs 36');
+  });
+});
+
+describe('renderOutOfReach', () => {
+  it('says in plain words what the Nanite Improved requirement is', () => {
+    // data: "Cyberdeck & 6" is the flag set by wearing the Trader Nanodeck (auno id 270769).
+    const html = renderOutOfReach(buildLadderView(catalog, trader(1801), null));
+
+    expect(html).toContain('also needs the Trader Nanodeck worn');
+    expect(html).toContain('Cyberdeck &amp; 6');
   });
 });

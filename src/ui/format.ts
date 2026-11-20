@@ -27,3 +27,19 @@ export const duration = (seconds: number): string => {
   const rest = seconds % 60;
   return rest === 0 ? `${minutes} min` : `${minutes} min ${rest} s`;
 };
+
+/**
+ * Plain-words meaning of requirements the calculator cannot evaluate, keyed by
+ * the text the source prints. "Cyberdeck & 6" is the flag set by wearing the
+ * Trader Nanodeck (see data/GAPS.md).
+ */
+const REQUIREMENT_MEANING: Readonly<Record<string, string>> = {
+  'Cyberdeck & 6': 'the Trader Nanodeck worn',
+};
+
+/** e.g. "the Trader Nanodeck worn (<code>Cyberdeck &amp; 6</code>)". */
+export const describeRequirement = (requirement: string): string => {
+  const meaning = REQUIREMENT_MEANING[requirement];
+  const code = `<code>${escapeHtml(requirement)}</code>`;
+  return meaning ? `${escapeHtml(meaning)} (${code})` : code;
+};
