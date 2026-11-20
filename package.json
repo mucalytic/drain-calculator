@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "data": "python3 scripts/scrape_auno.py",
-    "deploy": "npm run build && wrangler pages deploy dist --project-name trader-drain-ladder"
+    "deploy": "npm run build && npx wrangler pages deploy dist --project-name trader-drain-ladder"
   },
   "devDependencies": {
     "typescript": "^7.0.2",
