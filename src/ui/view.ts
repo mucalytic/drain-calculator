@@ -33,6 +33,8 @@ export interface LadderView {
   readonly selectedOutOfReach: OutOfReachDrain | null;
   readonly rungs: ReadonlyMap<number, Rung>;
   readonly outOfReach: readonly OutOfReachDrain[];
+  /** The drain with the lowest requirement in the catalog. */
+  readonly weakest: Drain;
 }
 
 export function buildLadderView(catalog: DrainCatalog, trader: Trader, selectedId: number | null): LadderView {
@@ -68,5 +70,6 @@ export function buildLadderView(catalog: DrainCatalog, trader: Trader, selectedI
     selectedOutOfReach: selected && !toSelected ? (rungs.get(selected.id)?.outOfReach ?? null) : null,
     rungs,
     outOfReach,
+    weakest: drains.reduce((lowest, drain) => (drain.skillRequired < lowest.skillRequired ? drain : lowest)),
   };
 }

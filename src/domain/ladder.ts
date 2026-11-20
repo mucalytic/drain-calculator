@@ -1,5 +1,5 @@
 import { DRAIN_LINES, type Drain, type DrainCatalog, type DrainLine } from './drain';
-import type { SkillPoints } from './skill';
+import { parseSkillPoints, type SkillPoints } from './skill';
 
 /**
  * Drain laddering, as pure functions.
@@ -182,7 +182,7 @@ function extraSkillNeeded(catalog: DrainCatalog, trader: Trader, drain: Drain): 
   const reachesWith = (extra: number): boolean => {
     const stronger: Trader = {
       ...trader,
-      skill: (trader.skill + extra) as SkillPoints, // sum of two valid values
+      skill: parseSkillPoints(trader.skill + extra),
       meetsUnevaluatedRequirements: true,
     };
     return routeTo(exploreRoutes(catalog, stronger), drain) !== undefined;

@@ -47,6 +47,12 @@ requirement) mean "none", not "unknown".
    what happens on a tie, whether the self-buff still lands when the target
    already has a better debuff). See the laddering write-up; those rules need
    confirming in game.
+   The rule matters most at the top of each line, where the self-buffs tie:
+   the Divest Skills (Advanced), (Nanite Enhanced) and (Nanite Improved)
+   transfers all have stacking order 40 (buffs +170, +210, +275), and the
+   Plunder Skills (Nanite Enhanced) and (Nanite Improved) transfers both have
+   42 (+210, +275). The calculator assumes the newly cast, higher drain's buff
+   replaces the lower one there too.
 
 ## Deliberately excluded
 

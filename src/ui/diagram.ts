@@ -34,7 +34,10 @@ function rungCentre(drain: Drain, rungs: number): Point {
 
 function rungNote(rung: Rung): string {
   if (rung.status === 'cast') return `skill after ${rung.skillAfter}`;
-  if (rung.status === 'blocked') return 'extra requirement';
+  if (rung.status === 'blocked') {
+    const extra = rung.outOfReach?.extraSkillNeeded ?? 0;
+    return extra > 0 ? `${extra} more skill + extra req.` : 'extra requirement';
+  }
   if (rung.status === 'out') return `${rung.outOfReach?.extraSkillNeeded} more skill`;
   return '';
 }
@@ -47,7 +50,7 @@ function rungLabel(rung: Rung): string {
       : rung.status === 'reachable'
         ? 'within reach, not needed'
         : rung.status === 'blocked'
-          ? 'out of reach: extra requirement'
+          ? `out of reach: extra requirement${rung.outOfReach?.extraSkillNeeded ? ` and ${rung.outOfReach.extraSkillNeeded} more skill needed` : ''}`
           : `out of reach: ${rung.outOfReach?.extraSkillNeeded} more skill needed`;
   return `${drain.name}. Needs ${drain.skillRequired}. Drains ${drain.targetDrain}, buffs you ${drain.selfBuff}. ${state}.`;
 }

@@ -168,6 +168,20 @@ describe('findOutOfReach', () => {
     expect(ransackMajor).toMatchObject({ shortfall: 6, extraSkillNeeded: 6 });
   });
 
+  it('needs fewer points of her own than the shortfall when a small gain unlocks rungs on the way', () => {
+    // At 300 the ladder tops out at 467, so Plunder (Minor), which needs 572, is 105 short.
+    // But 69 more of her own skill is enough. At 369 she can run Divest (Weak) +88 with
+    // Ransack (Advanced) +79 = 536 >= 474 Plunder (Weak) +97; then 369 + 88 + 97 = 554
+    // >= 526 Divest (Minor) +106; then 369 + 106 + 97 = 572 = Plunder (Minor).
+    // At 368 the same state gives 571, and nothing higher in the Divest line is
+    // castable (Divest (Average) needs 621), so 369 is the least.
+    const plunderMinor = findOutOfReach(catalog, trader(300)).find((o) => o.drain.id === 85855);
+
+    expect(plunderMinor).toMatchObject({ skillAtTopOfLadder: 467, shortfall: 105, extraSkillNeeded: 69 });
+    expect(planLadderTo(catalog, trader(369), 85855)).not.toBeNull();
+    expect(planLadderTo(catalog, trader(368), 85855)).toBeNull();
+  });
+
   it('gets past a rung she is one point short of by climbing the other line first', () => {
     // 299: Deprive (Major) 354, Ransack (Major) 417, Deprive (Advanced) 434.
     // Divest (Weak) needs 435: one short. Ransack (Advanced) 402 -> 299+72+79 = 450,

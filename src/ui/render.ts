@@ -13,7 +13,7 @@ export function renderSummary(view: LadderView): string {
   const running = runningDrains(plan);
   if (running.length === 0) {
     return `<div class="tile tile-wide"><p class="tile-label">Nothing castable</p>
-      <p class="tile-note">With ${plan.startingSkill} skill she can't cast any drain yet. The weakest, Deprive Skills (Weak), needs 36.</p></div>`;
+      <p class="tile-note">With ${plan.startingSkill} skill she can't cast any drain yet. The weakest, ${escapeHtml(view.weakest.name)}, needs ${view.weakest.skillRequired}.</p></div>`;
   }
   const npcOnly = running.filter((d) => d.offenceDrainNpcOnly).reduce((sum, d) => sum + d.offenceDrain, 0);
   const always = running.filter((d) => !d.offenceDrainNpcOnly).reduce((sum, d) => sum + d.offenceDrain, 0);
@@ -58,16 +58,21 @@ function skillBreakdown(step: LadderStep, plan: LadderPlan, view: LadderView): s
   return parts.join(' + ');
 }
 
-function whyCastable(step: LadderStep, plan: LadderPlan): string {
+/** Why the cast is allowed, naming each source of skill separately. */
+function whyCastable(step: LadderStep, plan: LadderPlan, view: LadderView): string {
   const need = step.drain.skillRequired;
-  if (plan.startingSkill >= need) {
-    return `She meets this on her own skill (${plan.startingSkill}).`;
+  const own = view.trader.skill;
+  if (own >= need) {
+    return `She meets this on her own skill (${own}).`;
   }
-  const short = need - plan.startingSkill;
-  const helpers = runningDrains({ ...plan, running: step.runningBefore })
-    .map((d) => `${escapeHtml(shortName(d))} (+${d.selfBuff})`)
-    .join(' and ');
-  return `On her own she is ${short} short. The buff${step.runningBefore.divest && step.runningBefore.plunder ? 's' : ''} from ${helpers} make${step.runningBefore.divest && step.runningBefore.plunder ? '' : 's'} it castable.`;
+  const helpers = runningDrains({ ...plan, running: step.runningBefore }).map(
+    (d) => `the buff from ${escapeHtml(shortName(d))} (+${d.selfBuff})`,
+  );
+  if (view.trader.temporaryBuff > 0) helpers.unshift(`her other buffs (+${view.trader.temporaryBuff})`);
+  const list = helpers.length > 1 ? `${helpers.slice(0, -1).join(', ')} and ${helpers.at(-1)}` : (helpers[0] ?? '');
+  // "Her other buffs" is plural; a single drain buff is singular.
+  const verb = helpers.length === 1 && view.trader.temporaryBuff === 0 ? 'makes' : 'make';
+  return `On her own she is ${need - own} short. ${list.charAt(0).toUpperCase()}${list.slice(1)} ${verb} it castable.`;
 }
 
 function renderStep(step: LadderStep, index: number, plan: LadderPlan, view: LadderView): string {
@@ -82,7 +87,7 @@ function renderStep(step: LadderStep, index: number, plan: LadderPlan, view: Lad
         <h3>Cast ${drainLink(drain)}</h3>
         <p><strong>Needs ${drain.skillRequired}, she has ${step.skillBefore}</strong>
           <span class="muted">(${escapeHtml(skillBreakdown(step, plan, view))})</span></p>
-        <p>${whyCastable(step, plan)}</p>
+        <p>${whyCastable(step, plan, view)}</p>
         <p>${replaced}</p>
       </div>
       <div class="step-after">
