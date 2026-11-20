@@ -26,15 +26,15 @@ describe('renderSteps: why a cast is castable', () => {
     // Own 290 + 10 other buffs; Deprive Skills needs 216.
     const [step] = stepTexts(trader(290, 10), 85864);
 
-    expect(step).toContain('She meets this on her own skill (290).');
+    expect(step).toContain('You meet this on your own skill (290).');
   });
 
   it('credits her other buffs when they alone close the gap', () => {
     // Own 30 + 6 other buffs = 36 = Deprive (Weak). On her own she is 6 short.
     const [step] = stepTexts(trader(30, 6), 85872);
 
-    expect(step).toContain('Needs 36, she has 36');
-    expect(step).toContain('On her own she is 6 short. Her other buffs (+6) make it castable.');
+    expect(step).toContain('Needs 36, you have 36');
+    expect(step).toContain('On your own you are 6 short. Your other buffs (+6) make it castable.');
   });
 
   it('credits a running drain when it alone closes the gap', () => {
@@ -42,7 +42,7 @@ describe('renderSteps: why a cast is castable', () => {
     const steps = stepTexts(trader(216), 85863);
 
     expect(steps[1]).toContain(
-      'On her own she is 25 short. The buff from Ransack (Average) (+25) makes it castable.',
+      'On your own you are 25 short. The buff from Ransack (Average) (+25) makes it castable.',
     );
   });
 
@@ -52,9 +52,9 @@ describe('renderSteps: why a cast is castable', () => {
     const steps = stepTexts(trader(200, 10), 85864);
 
     expect(steps).toHaveLength(2);
-    expect(steps[1]).toContain('Needs 216, she has 219');
+    expect(steps[1]).toContain('Needs 216, you have 219');
     expect(steps[1]).toContain(
-      'On her own she is 16 short. Her other buffs (+10) and the buff from Ransack (Weak) (+9) make it castable.',
+      'On your own you are 16 short. Your other buffs (+10) and the buff from Ransack (Weak) (+9) make it castable.',
     );
   });
 });

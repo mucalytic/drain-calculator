@@ -13,7 +13,7 @@ export function renderSummary(view: LadderView): string {
   const running = runningDrains(plan);
   if (running.length === 0) {
     return `<div class="tile tile-wide"><p class="tile-label">Nothing castable</p>
-      <p class="tile-note">With ${plan.startingSkill} skill she can't cast any drain yet. The weakest, ${escapeHtml(view.weakest.name)}, needs ${view.weakest.skillRequired}.</p></div>`;
+      <p class="tile-note">With ${plan.startingSkill} skill you can't cast any drain yet. The weakest, ${escapeHtml(view.weakest.name)}, needs ${view.weakest.skillRequired}.</p></div>`;
   }
   const npcOnly = running.filter((d) => d.offenceDrainNpcOnly).reduce((sum, d) => sum + d.offenceDrain, 0);
   const always = running.filter((d) => !d.offenceDrainNpcOnly).reduce((sum, d) => sum + d.offenceDrain, 0);
@@ -33,19 +33,19 @@ export function renderSummary(view: LadderView): string {
       <p class="tile-note">off every attack and nano skill${[...offence, ...targetExtras.map(escapeHtml)].map((t) => `<br />${t}`).join('')}</p>
     </div>
     <div class="tile">
-      <p class="tile-label">Buff on the Trader</p>
+      <p class="tile-label">Buff on you</p>
       <p class="tile-value tile-buff">+${plan.totalSelfBuff}</p>
       <p class="tile-note">on every attack and nano skill${selfExtras.map((t) => `<br />${escapeHtml(t)}`).join('')}</p>
     </div>
     <div class="tile">
-      <p class="tile-label">Her skill</p>
+      <p class="tile-label">Your skill</p>
       <p class="tile-value">${plan.startingSkill} <span class="arrow">&#8594;</span> ${plan.finalSkill}</p>
       <p class="tile-note">${plan.steps.length} cast${plan.steps.length === 1 ? '' : 's'} &#183; ${plan.totalNanoCost} nano</p>
     </div>
     <div class="tile">
       <p class="tile-label">Running at the end</p>
       <p class="tile-pair">${pair}</p>
-      <p class="tile-note">${running.map((d) => `${d.ncu} NCU on target, ${d.selfBuffNcu} on her, ${duration(d.durationSeconds)}`).join('<br />')}</p>
+      <p class="tile-note">${running.map((d) => `${d.ncu} NCU on target, ${d.selfBuffNcu} on you, ${duration(d.durationSeconds)}`).join('<br />')}</p>
     </div>`;
 }
 
@@ -63,29 +63,29 @@ function whyCastable(step: LadderStep, plan: LadderPlan, view: LadderView): stri
   const need = step.drain.skillRequired;
   const own = view.trader.skill;
   if (own >= need) {
-    return `She meets this on her own skill (${own}).`;
+    return `You meet this on your own skill (${own}).`;
   }
   const helpers = runningDrains({ ...plan, running: step.runningBefore }).map(
     (d) => `the buff from ${escapeHtml(shortName(d))} (+${d.selfBuff})`,
   );
-  if (view.trader.temporaryBuff > 0) helpers.unshift(`her other buffs (+${view.trader.temporaryBuff})`);
+  if (view.trader.temporaryBuff > 0) helpers.unshift(`your other buffs (+${view.trader.temporaryBuff})`);
   const list = helpers.length > 1 ? `${helpers.slice(0, -1).join(', ')} and ${helpers.at(-1)}` : (helpers[0] ?? '');
-  // "Her other buffs" is plural; a single drain buff is singular.
+  // "Your other buffs" is plural; a single drain buff is singular.
   const verb = helpers.length === 1 && view.trader.temporaryBuff === 0 ? 'makes' : 'make';
-  return `On her own she is ${need - own} short. ${list.charAt(0).toUpperCase()}${list.slice(1)} ${verb} it castable.`;
+  return `On your own you are ${need - own} short. ${list.charAt(0).toUpperCase()}${list.slice(1)} ${verb} it castable.`;
 }
 
 function renderStep(step: LadderStep, index: number, plan: LadderPlan, view: LadderView): string {
   const { drain } = step;
   const replaced = step.replaces
-    ? `Replaces ${escapeHtml(shortName(step.replaces))}: her buff from this line goes from +${step.replaces.selfBuff} to +${drain.selfBuff}.`
+    ? `Replaces ${escapeHtml(shortName(step.replaces))}: your buff from this line goes from +${step.replaces.selfBuff} to +${drain.selfBuff}.`
     : `First drain in the ${escapeHtml(LINE_TITLE[drain.line])} line: +${drain.selfBuff}.`;
   return `
     <li class="step line-${drain.line}">
       <span class="step-number">${index + 1}</span>
       <div class="step-body">
         <h3>Cast ${drainLink(drain)}</h3>
-        <p><strong>Needs ${drain.skillRequired}, she has ${step.skillBefore}</strong>
+        <p><strong>Needs ${drain.skillRequired}, you have ${step.skillBefore}</strong>
           <span class="muted">(${escapeHtml(skillBreakdown(step, plan, view))})</span></p>
         <p>${whyCastable(step, plan, view)}</p>
         <p>${replaced}</p>
@@ -102,18 +102,18 @@ function renderUnreachableSelection(entry: OutOfReachDrain, view: LadderView): s
   const { drain } = entry;
   const blocked =
     entry.reason === 'unevaluated-requirement'
-      ? `<p>It also has a requirement this calculator can't check: <code>${escapeHtml(drain.unevaluatedRequirement ?? '')}</code>. Tick the box above if she meets it.</p>`
+      ? `<p>It also has a requirement this calculator can't check: <code>${escapeHtml(drain.unevaluatedRequirement ?? '')}</code>. Tick the box above if you meet it.</p>`
       : '';
   const skill =
     entry.extraSkillNeeded > 0
-      ? `<p>It needs <strong>${drain.skillRequired}</strong>. Her best ladder tops out at ${entry.skillAtTopOfLadder}, which is ${entry.shortfall} short.
-         Raising her own skill by <strong>${entry.extraSkillNeeded}</strong> (to ${view.trader.skill + entry.extraSkillNeeded}) would let her ladder to it.</p>`
-      : `<p>Her skill is enough for it (needs ${drain.skillRequired}).</p>`;
+      ? `<p>It needs <strong>${drain.skillRequired}</strong>. Your best ladder tops out at ${entry.skillAtTopOfLadder}, which is ${entry.shortfall} short.
+         Raising your own skill by <strong>${entry.extraSkillNeeded}</strong> (to ${view.trader.skill + entry.extraSkillNeeded}) would let you ladder to it.</p>`
+      : `<p>Your skill is enough for it (needs ${drain.skillRequired}).</p>`;
   return `
     <div class="callout">
       <h3>${drainLink(drain)} is out of reach</h3>
       ${skill}${blocked}
-      <p class="muted">Showing her best ladder below.</p>
+      <p class="muted">Showing your best ladder below.</p>
     </div>`;
 }
 
@@ -159,7 +159,7 @@ function renderOutOfReachRow(entry: OutOfReachDrain, view: LadderView): string {
 export function renderOutOfReach(view: LadderView): string {
   if (view.outOfReach.length === 0) {
     return `<div class="section-head"><h2>Still out of reach</h2>
-      <p class="muted">Nothing. She is running the top drain of both lines.</p></div>`;
+      <p class="muted">Nothing. You are running the top drain of both lines.</p></div>`;
   }
   const tables = DRAIN_LINES.map((line) => {
     const entries = view.outOfReach.filter((entry) => entry.drain.line === line);
@@ -181,7 +181,7 @@ export function renderOutOfReach(view: LadderView): string {
   return `
     <div class="section-head">
       <h2>Still out of reach</h2>
-      <p class="muted">"Needs" is the Psychological Modifications and Time &amp; Space requirement. "Short at top of ladder" compares it with her skill at the top of her best ladder (${view.best.finalSkill}). "Own skill to gain" is the fewest points she must add to her own skill to ladder there, which can be less than the shortfall when a small gain unlocks a rung on the way.</p>
+      <p class="muted">"Needs" is the Psychological Modifications and Time &amp; Space requirement. "Short at top of ladder" compares it with your skill at the top of your best ladder (${view.best.finalSkill}). "Own skill to gain" is the fewest points you must add to your own skill to ladder there, which can be less than the shortfall when a small gain unlocks a rung on the way.</p>
     </div>
     <div class="tables">${tables.join('')}</div>`;
 }
@@ -207,7 +207,7 @@ export function renderFooter(catalog: DrainCatalog, source: DataSource): string 
     <p><strong>Data as of patch ${escapeHtml(source.targetPatch)}</strong> (the base of Project Rubi-Ka).
       Source: ${escapeHtml(source.source)}, read on ${escapeHtml(source.generatedOn)}.
       Each nano uses the item version in force at ${escapeHtml(source.targetPatch)} (versions from patches ${patches.map(escapeHtml).join(', ')}), not the live-server version.</p>
-    <p class="muted">Assumed game rules, not in the item data: a drain replaces a lower one of the same line; the self-buffs of the two lines add; a cast is checked against her skill including the buff it is about to replace. Project Rubi-Ka may differ from the original 18.4 values.</p>
+    <p class="muted">Assumed game rules, not in the item data: a drain replaces a lower one of the same line; the self-buffs of the two lines add; a cast is checked against the caster's skill including the buff it is about to replace. Project Rubi-Ka may differ from the original 18.4 values.</p>
     <div class="nano-lists">${lists.join('')}</div>
     <p class="muted">No tracking, no cookies, no external requests. Your inputs are kept only in this browser.</p>`;
 }
