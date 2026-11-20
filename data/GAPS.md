@@ -5,7 +5,8 @@ pages. Nothing in it is estimated. This file lists every value that is null, and
 everything I could not confirm for Project Rubi-Ka (patch 18.4).
 
 Source used: auno.org only (it answered plain HTTP requests). aogalaxy.com was
-reachable but was not needed and has not been cross-checked.
+consulted only for the `Cyberdeck` requirement (item 3 below); it shows live
+data with no patch history, so it was not used for values.
 
 ## Null fields
 
@@ -33,8 +34,12 @@ requirement) mean "none", not "unknown".
    `nanolineLabelOnAuno`. The true in-game name of strain 138 is not on the
    page. The 16 Deprive/Divest transfers are strain 137, "Divest skills effect".
 3. **`Cyberdeck & 6`** on both Nanite Improved nanos (17.9). Recorded exactly as
-   auno prints it. It is a bit-flag test, most likely an expansion check, but
-   the item page does not say what bits 2 and 4 mean.
+   auno prints it. aogalaxy (live data, not 18.4) prints the same requirement
+   as `Cyberdeck & 64`, so auno's 6 is most likely a bit number (bit 6 = 64),
+   but neither page says so. "Cyberdeck" is the stat name both databases use;
+   per the project owner a Trader has no access to a cyberdeck, so the name
+   cannot be read literally. What sets this flag on a character, and whether a
+   Trader on PRK can meet it, is not in the item data.
 4. **Crystal for Plunder Skills (Nanite Improved)** is shown on the 17.9 page as
    "Nano Crystal (Divest Skills (Nanite Improved))" (id 275033). Recorded as shown.
 5. **Stacking behaviour.** The pages give a stacking order number per nano and
