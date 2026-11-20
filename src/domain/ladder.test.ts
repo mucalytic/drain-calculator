@@ -85,18 +85,20 @@ describe('planBestLadder', () => {
     }
   });
 
-  it('needs only one Advanced drain to step up to both Nanite Enhanced drains', () => {
-    // 853 -> Plunder (Advanced) [853] +178 = 1031 >= 1001 Divest (Nanite Enhanced),
-    // +210 = 1241 >= 1001 Plunder (Nanite Enhanced): 853 + 210 + 210 = 1273.
-    // Divest (Advanced) is never needed, so three casts, not four.
+  it('uses the cheapest stepping stone up to both Nanite Enhanced drains', () => {
+    // 853 needs 148 more for the 1001 of the Nanite Enhanced pair. One cast is
+    // enough, and the cheapest that gives 148+ is Plunder Skills: needs 745,
+    // +151 = 1004, 349 nano (Divest Skills +146 falls short; Divest (Major)
+    // +157 costs 387). Then Divest (Nanite Enhanced) -> 853 + 210 + 151 = 1214,
+    // then Plunder (Nanite Enhanced) -> 853 + 210 + 210 = 1273.
     const plan = planBestLadder(catalog, trader(853));
 
     expect(casts(plan)).toEqual([
-      'Plunder Skills (Advanced)',
+      'Plunder Skills',
       'Divest Skills (Nanite Enhanced)',
       'Plunder Skills (Nanite Enhanced)',
     ]);
-    expect(plan.finalSkill).toBe(853 + 210 + 210);
+    expect(plan.steps.map((s) => s.skillAfter)).toEqual([1004, 1214, 1273]);
   });
 
   it('counts temporary buffs towards requirements', () => {
