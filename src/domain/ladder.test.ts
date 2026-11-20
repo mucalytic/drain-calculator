@@ -85,15 +85,18 @@ describe('planBestLadder', () => {
     }
   });
 
-  it('casts the top drains directly when she already has the skill', () => {
-    // 853 covers Divest (Advanced) 827 and Plunder (Advanced) 853; their buffs
-    // 170 + 178 give 1201 >= 1001 for both Nanite Enhanced drains.
+  it('needs only one Advanced drain to step up to both Nanite Enhanced drains', () => {
+    // 853 -> Plunder (Advanced) [853] +178 = 1031 >= 1001 Divest (Nanite Enhanced),
+    // +210 = 1241 >= 1001 Plunder (Nanite Enhanced): 853 + 210 + 210 = 1273.
+    // Divest (Advanced) is never needed, so three casts, not four.
     const plan = planBestLadder(catalog, trader(853));
 
-    expect(plan.running.divest?.name).toBe('Divest Skills (Nanite Enhanced)');
-    expect(plan.running.plunder?.name).toBe('Plunder Skills (Nanite Enhanced)');
+    expect(casts(plan)).toEqual([
+      'Plunder Skills (Advanced)',
+      'Divest Skills (Nanite Enhanced)',
+      'Plunder Skills (Nanite Enhanced)',
+    ]);
     expect(plan.finalSkill).toBe(853 + 210 + 210);
-    expect(plan.steps).toHaveLength(4);
   });
 
   it('counts temporary buffs towards requirements', () => {
@@ -119,11 +122,13 @@ describe('planBestLadder', () => {
 
 describe('planLadderTo', () => {
   it('finds the cheapest ladder to a drain below the top', () => {
-    // 216 -> Ransack Skills needs 241: one Deprive first. Deprive (Lesser) +29
-    // is the cheapest that gets there (Average +21 = 237 does not).
+    // 216 -> Ransack Skills needs 241, so 25 more. The cheapest single cast that
+    // gives it is Ransack (Average): needs 148, +25 = 241, 43 nano. (Deprive
+    // (Lesser) +29 also works but costs 57; Deprive (Average) +21 falls short.)
     const plan = planLadderTo(catalog, trader(216), 85863);
 
-    expect(plan && casts(plan)).toEqual(['Deprive Skills (Lesser)', 'Ransack Skills']);
+    expect(plan && casts(plan)).toEqual(['Ransack Skills (Average)', 'Ransack Skills']);
+    expect(plan?.steps[1]?.replaces?.name).toBe('Ransack Skills (Average)');
   });
 
   it('is a single cast for a drain she can already afford', () => {
