@@ -15,6 +15,7 @@ reachable but was not needed and has not been cross-checked.
 | `attackTimeSeconds`, `rechargeTimeSeconds` | Shutdown Skills | The 18.0 page has no attack/recharge rows. |
 | `nanolineStrainId` | Shutdown Skills and its two self-casts | auno shows the nanoline only as a number ("889", "890") with no name or link. |
 | `school`/`nanoline`, `stackingOrder` | Affected by Shutdown Skills (self-cast of Shutdown Skills) | Not on the page. |
+| `selfBuffs[].nanoline` | all 16 Ransack and Plunder nanos | auno's name for this nanoline is wrong, see item 2 below. |
 
 `condition: null`, `connector: null` and `value: null` (on a "not running"
 requirement) mean "none", not "unknown".
@@ -27,9 +28,13 @@ requirement) mean "none", not "unknown".
    18.8.53 as "in force at 18.4". I can't verify that auno imported every patch
    in between, or that PRK has not changed these nanos itself.
 2. **Self-buff nanoline name for Ransack/Plunder.** auno labels strain 138
-   (all Ransack and Plunder "Transfer" buffs) "Trader AC leech line A". That
-   label looks wrong, but the grouping is consistent: all 16 share strain 138,
-   and all 16 Deprive/Divest transfers share strain 137 ("Divest skills effect").
+   "Trader AC leech line A". That is wrong: these are not AC leeches. auno's
+   own listing of strain 138 contains exactly the 16 Ransack and Plunder
+   "Transfer" buffs and no AC nano (the real AC leeches, Siphon AC and Draw AC,
+   are listed elsewhere). So `nanoline` is null for those 16 self-buffs, the
+   grouping is carried by `nanolineStrainId: 138`, and auno's text is kept in
+   `nanolineLabelOnAuno`. The true in-game name of strain 138 is not on the
+   page. The 16 Deprive/Divest transfers are strain 137, "Divest skills effect".
 3. **`Cyberdeck & 6`** on both Nanite Improved nanos (17.9). Recorded exactly as
    auno prints it. It is a bit-flag test, most likely an expansion check, but
    the item page does not say what bits 2 and 4 mean.

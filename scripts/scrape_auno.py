@@ -36,6 +36,11 @@ ITEM_URL = "https://auno.org/ao/db.php?id={id}"
 PATCH_URL = "https://auno.org/ao/db.php?id={id}&patch={patch}"
 
 # family name -> nano ids, weakest first.
+# Nanoline names auno prints that are known to be wrong, by strain id. The name
+# is written as null and auno's text is kept in nanolineLabelOnAuno.
+# 138 holds only the 16 Ransack/Plunder "Transfer" self-buffs and no AC nano.
+MISLABELLED_STRAINS = {138: "Trader AC leech line A"}
+
 DRAIN_IDS: dict[str, list[int]] = {
     "Deprive Skills": [85872, 85870, 85868, 85866, 85864, 85862, 85860],
     "Divest Skills": [85858, 85856, 85854, 85852, 85850, 85848, 85846, 267114, 275030],
@@ -243,6 +248,10 @@ def common_fields(item_id: int, page: str, patch: str, labels: list[str]) -> dic
     current = (CACHE / f"{item_id}_current.html").read_text(encoding="utf-8", errors="replace")
     _, current_line, strain = school(info_table(current))
     legend = re.search(r"<fieldset>\s*<legend>(.*?)</legend>(.*?)<br", page, flags=re.S)
+    strain = strain if current_line == line else None
+    label_on_auno = None
+    if MISLABELLED_STRAINS.get(strain) == line:
+        label_on_auno, line = line, None
     return {
         "id": item_id,
         "name": text(legend.group(1)) if legend else None,
@@ -252,7 +261,8 @@ def common_fields(item_id: int, page: str, patch: str, labels: list[str]) -> dic
         "description": text(legend.group(2)) if legend else None,
         "school": kind,
         "nanoline": line,
-        "nanolineStrainId": strain if current_line == line else None,
+        "nanolineStrainId": strain,
+        "nanolineLabelOnAuno": label_on_auno,
         "stackingOrder": integer(info.get("Stacking order")),
         "ncu": integer(info.get("NCU")),
         "durationSeconds": duration_seconds(info.get("Duration")),
