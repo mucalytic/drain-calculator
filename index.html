@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Drain-laddering calculator for Anarchy Online Traders (patch 18.4 / Project Rubi-Ka)." />
+    <title>Trader Drain Ladder</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b0f17'/%3E%3Cpath d='M10 4v24M22 4v24M10 9h12M10 16h12M10 23h12' stroke='%234cc9f0' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header class="masthead">
+      <h1>Trader Drain Ladder</h1>
+      <p>Work out the best Deprive + Ransack ladder for an Anarchy Online Trader.</p>
+    </header>
+
+    <main>
+      <form class="panel controls" id="controls" autocomplete="off" novalidate>
+        <label class="field">
+          <span class="field-label">Psychological Modifications / Time &amp; Space</span>
+          <input id="skill" name="skill" type="text" inputmode="numeric" value="300" aria-describedby="skill-hint skill-error" />
+          <span class="field-hint" id="skill-hint">Your own skill with no drain running. Every drain needs both, so enter the lower one.</span>
+          <span class="field-error" id="skill-error" role="alert"></span>
+        </label>
+        <label class="field">
+          <span class="field-label">Other temporary buffs</span>
+          <input id="buff" name="buff" type="text" inputmode="numeric" value="0" aria-describedby="buff-hint buff-error" />
+          <span class="field-hint" id="buff-hint">Extra points on those skills right now, such as a wrangle.</span>
+          <span class="field-error" id="buff-error" role="alert"></span>
+        </label>
+        <label class="field field-check">
+          <input id="flag" name="flag" type="checkbox" />
+          <span>
+            <span class="field-label">Meets the Nanite Improved requirement</span>
+            <span class="field-hint">Both Nanite Improved drains carry an extra requirement (<code>Cyberdeck &amp; 6</code>) this calculator can't check. Leave off unless you know you can cast them.</span>
+          </span>
+        </label>
+      </form>
+
+      <section class="tiles" id="summary" aria-live="polite"></section>
+
+      <section class="panel">
+        <div class="section-head">
+          <h2 id="diagram-title">The climb</h2>
+          <p class="muted">Bottom rung is the weakest drain. Numbered rungs are the casts, in order. Select any rung to see the ladder to that drain.</p>
+        </div>
+        <div class="diagram-scroll" id="diagram"></div>
+        <ul class="legend">
+          <li><span class="swatch swatch-cast"></span>Cast in this ladder</li>
+          <li><span class="swatch swatch-running"></span>Left running at the end</li>
+          <li><span class="swatch swatch-reachable"></span>Within reach, not needed</li>
+          <li><span class="swatch swatch-out"></span>Out of reach</li>
+        </ul>
+      </section>
+
+      <section class="panel" id="steps"></section>
+      <section class="panel" id="out-of-reach"></section>
+    </main>
+
+    <footer id="footer"></footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
