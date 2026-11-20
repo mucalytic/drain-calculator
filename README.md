@@ -90,8 +90,12 @@ One-time setup:
 
 ```sh
 npx wrangler login
-npx wrangler pages project create trader-drain-ladder --production-branch master
+npx wrangler pages project create trader-drain-ladder --production-branch master --force
 ```
+
+`--force` is needed only for that one command: current Wrangler versions
+otherwise try to create a Workers project instead of a Pages one. The project
+already exists (https://trader-drain-ladder.pages.dev), so this step is done.
 
 Each deploy:
 
